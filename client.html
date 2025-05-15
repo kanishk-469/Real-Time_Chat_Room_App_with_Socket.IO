@@ -19,7 +19,7 @@ Implement the features inside the script tag -->
           required
         />
         <input
-          type="text"
+          type="number"
           id="room-input"
           placeholder="Enter room ID"
           required
@@ -80,6 +80,17 @@ Implement the features inside the script tag -->
           div.innerText = `${userInfo.username} has joined Chat!`;
           // Insert the new element at the top
           chatContainer.insertBefore(div, chatContainer.firstChild);
+        });
+
+        socket.on("load_old_messages", (oldMessages) => {
+          oldMessages.forEach((message) => {
+            const div = document.createElement("div");
+            div.innerText = `${new Date(message.timestamp).toDateString()} - ${
+              message.username
+            } : ${message.message}`;
+            // Insert the new element at the top
+            chatContainer.insertBefore(div, chatContainer.firstChild);
+          });
         });
       });
 

@@ -49,3 +49,5 @@ ARM 32-bit (armv7): node-v18.20.1-linux-armv7l.tar.xz 3. Any Web Browser could b
 
 1.  Simple User Identification Using Input field.
 2.  When someone joins chat room, other users gets notification.
+3.  Storing chat messages to NoSQL mongoDB Database using mongoose ODM.
+4.  Retrieving old chat message from mongoDB database.
